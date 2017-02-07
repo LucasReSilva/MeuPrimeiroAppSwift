@@ -149,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="1336.8" y="-833.43328335832086"/>
         </scene>
-        <!--Detalhes View Controller-->
+        <!--Detalhes-->
         <scene sceneID="EGm-B9-BOp">
             <objects>
                 <viewController id="jZC-qy-mFa" customClass="DetalhesViewController" customModule="DesafioStoryBoard" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,6 +201,7 @@
                             <constraint firstItem="6kk-tg-gt6" firstAttribute="top" secondItem="ODX-Nd-gBx" secondAttribute="bottom" id="s2B-fu-8Wg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detalhes" id="HXE-H7-QsA"/>
                     <connections>
                         <outlet property="album" destination="Mfw-gG-6vq" id="dZV-Qw-alh"/>
                         <outlet property="artista" destination="iiz-hW-len" id="ipb-XN-Qw2"/>

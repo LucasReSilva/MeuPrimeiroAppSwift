@@ -108,23 +108,23 @@ class PrimeiraTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        let index  = tableView.indexPathForSelectedRow!.row
-        
         if segue.identifier == "detalhesMusica"{
             
             if let newV = segue.destination as? DetalhesViewController{
+                
+                if let index = tableView.indexPathForSelectedRow?.row{
                 newV.artista_musica = self.musicas[index].artista
                 newV.titulo_musica = self.musicas[index].titulo
 
                 newV.album_musica = self.musicas[index].album
 
                 newV.capa_musica = self.musicas[index].foto
-}
+                }
             
         }
         
         
     }
-    
+    }
 
 }

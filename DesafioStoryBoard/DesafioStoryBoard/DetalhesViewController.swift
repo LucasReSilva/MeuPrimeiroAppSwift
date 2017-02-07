@@ -32,6 +32,8 @@ class DetalhesViewController: UIViewController {
         self.album.text = self.album_musica
         self.capa.image = UIImage(named: self.capa_musica)
         
+        self.title = self.artista_musica
+        
     }
 
     override func didReceiveMemoryWarning() {
