@@ -18,12 +18,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate{
     
     var userLocation = CLLocation()
     
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mapView.showsUserLocation = true
         self.setupLocationManager()
         self.addGesture()
+        centerMapOnLocation(location: CLLocation(latitude: -10.9235408, longitude: -37.105188699999999))
+
     }
     
     func setupLocationManager(){
