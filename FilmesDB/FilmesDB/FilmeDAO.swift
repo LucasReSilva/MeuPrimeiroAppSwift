@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class FilmeDAO{
    
@@ -18,4 +19,19 @@ class FilmeDAO{
     // Deletar
     
     // Buscar
+    static func buscarTodosOsFilmes() -> [Filme]{
+        var filmes = [Filme]()
+        
+        let request: NSFetchRequest<Filme> = Filme.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor.init(key: "titulo", ascending: true)]
+        do{
+            try filmes = CoreDataManager.getContext().fetch(request)
+            print("Numero de filmes: \(filmes.count)")
+        } catch let error{
+            print("Deu erro: \(error)")
+        }
+        
+        return filmes
+    }
 }

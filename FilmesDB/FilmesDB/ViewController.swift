@@ -32,6 +32,18 @@ class ViewController: UIViewController {
     
     
     @IBAction func buscarTodosOsFilmes() {
+        
+        var filmes = [Filme]()
+        var titulos = ""
+        
+        filmes = FilmeDAO.buscarTodosOsFilmes()
+        
+        for filme in filmes{
+            titulos = titulos + filme.titulo! + ", "
+        }
+        
+        resultadoTF.text = titulos
+        
     }
     
     
